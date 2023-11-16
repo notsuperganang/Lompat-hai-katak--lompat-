@@ -1,5 +1,6 @@
 /**
- * Kelas ini digunakan sebagai representasi seekor katak dalam permainan. Kelas ini berisi informasi tentang posisi dan skor dari katak.
+ * Kelas ini digunakan sebagai representasi seekor katak dalam permainan. Kelas
+ * ini berisi informasi tentang posisi dan skor dari katak.
  *
  * @author Ganang Setyo Hadi
  * @version 10-29-2023
@@ -60,7 +61,7 @@ public class frog {
    * @return Posisi ditambah 1
    */
   public int jump1fwd() {
-    System.out.print("\t\tKatak melompat satu kali ke depan!\n");
+    System.out.print("\t\tThe frog jumps forward once!!\n");
     return this.position += 1;
   }
 
@@ -70,7 +71,7 @@ public class frog {
    * @return Posisi ditambah 2
    */
   public int jump2fwd() {
-    System.out.print("\t\tKatak melompat dua kali ke depan!\n");
+    System.out.print("\t\tThe frog jumps forward twice!!\n");
     return this.position += 2;
   }
 
@@ -80,7 +81,7 @@ public class frog {
    * @return Posisi dikurangi 1
    */
   public int jump1bwd() {
-    System.out.print("\t\tKatak melompat satu kali ke belakang!\n");
+    System.out.print("\t\tThe frog jumps backward once!!\n");
     return this.position -= 1;
   }
 
@@ -90,7 +91,7 @@ public class frog {
    * @return Posisi dikurangi 2
    */
   public int jump2bwd() {
-    System.out.print("\t\tKatak melompat dua kali ke belakang!\n");
+    System.out.print("\t\tThe frog jumps backward twice!!\n");
     return this.position -= 2;
   }
 }
