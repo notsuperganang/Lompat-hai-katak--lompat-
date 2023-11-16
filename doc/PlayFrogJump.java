@@ -24,7 +24,7 @@ public class PlayFrogJump {
    * jumlah koin, jumlah monster, tingkat kesulitan,
    * nama pemain, objek Scanner untuk input pengguna,
    * dan objek permainan untuk tingkat kesulitan yang
-   *  berbeda (Easy, Normal, Hard, Insane).
+   * berbeda (Easy, Normal, Hard, Insane).
    */
   int manyCoins;
   int manyMonsters;
@@ -44,53 +44,38 @@ public class PlayFrogJump {
   public static void printGameRules() {
     System.out.println("\n");
     System.out.println(
-      "\t\t==============================================================================="
-    );
+        "\t\t===============================================================================");
     System.out.println(
-      "\t\t<===================---<     WELCOME TRAVELERS      >---======================>"
-    );
+        "\t\t<===================---<     WELCOME TRAVELERS      >---======================>");
     System.out.println(
-      "\t\t<===================---<            TO              >---======================>"
-    );
+        "\t\t<===================---<            TO              >---======================>");
     System.out.println(
-      "\t\t<===================---<   THE ULTIMATE FROG JUMP   >---======================>"
-    );
+        "\t\t<===================---<   THE ULTIMATE FROG JUMP   >---======================>");
     System.out.println(
-      "\t\t==============================================================================="
-    );
+        "\t\t===============================================================================");
     System.out.println("\n\t\tHere are the rules of the game:");
     System.out.println("\t\t********************************************");
     System.out.println(
-      "\t\t1. You control a frog that can jump forward or backward."
-    );
+        "\t\t1. You control a frog that can jump forward or backward.");
     System.out.println(
-      "\t\t2. You will encounter different challenges on the way:"
-    );
+        "\t\t2. You will encounter different challenges on the way:");
     System.out.println("\t\t   - Coins: Collect coins to earn points.");
     System.out.println(
-      "\t\t   - Monsters: Beware of monsters that can deduct points."
-    );
+        "\t\t   - Monsters: Beware of monsters that can deduct points.");
     System.out.println(
-      "\t\t3. Choose your difficulty level (Easy, Normal, Hard, or Insane)."
-    );
+        "\t\t3. Choose your difficulty level (Easy, Normal, Hard, or Insane).");
     System.out.println(
-      "\t\t4. You can Jump one or two box forward or backward based on your choice."
-    );
+        "\t\t4. You can Jump one or two box forward or backward based on your choice.");
     System.out.println(
-      "\t\t5. Keep an eye on your frog's position and point score."
-    );
+        "\t\t5. Keep an eye on your frog's position and point score.");
     System.out.println(
-      "\t\t6. The game ends when your frog reaches the end or loses all points."
-    );
+        "\t\t6. The game ends when your frog reaches the end or loses all points.");
     System.out.println(
-      "\t\t7. Based on your score, you will be classified as:"
-    );
+        "\t\t7. Based on your score, you will be classified as:");
     System.out.println(
-      "\t\t   - Terrible\n\t\t   - So-so\n\t\t   - Decent\n\t\t   - Legend!"
-    );
+        "\t\t   - Terrible\n\t\t   - So-so\n\t\t   - Decent\n\t\t   - Legend!");
     System.out.println(
-      "\t\t8. You can play again or exit after completing the game."
-    );
+        "\t\t8. You can play again or exit after completing the game.");
     System.out.println("\t\t9. Enjoy the game and have fun!");
     System.out.println("\t\t********************************************");
   }
@@ -102,8 +87,7 @@ public class PlayFrogJump {
   private static void Movement() {
     System.out.print("\n\t\tChoose your next move!");
     System.out.print(
-      "\n\t\t1. Jump 1 box forward\n\t\t2. Jump 2 boxes forward\n\t\t3. Jump backward 1 box\n\t\t4. Jump backward 2 boxes\n"
-    );
+        "\n\t\t1. Jump 1 box forward\n\t\t2. Jump 2 boxes forward\n\t\t3. Jump backward 1 box\n\t\t4. Jump backward 2 boxes\n");
     System.out.print("\n\t\tYour Choice : ");
   }
 
@@ -113,15 +97,15 @@ public class PlayFrogJump {
    */
   private static void Congrats(int playerScore) {
     if (playerScore <= 0) {
-      System.out.println("Bro, reallY? I cant even say anything -_-.");
+      System.out.println("\n\t\tBro, reallY? I cant even say anything -_-.\n");
     } else if (playerScore > 0 && playerScore <= 100) {
-      System.out.println("You are TERRIBLE my guy!");
+      System.out.println("\n\t\tYou are TERRIBLE my guy!\n");
     } else if (playerScore > 100 && playerScore <= 200) {
-      System.out.println("Its just so so. No need to be happy like that!");
+      System.out.println("\n\t\tIts just so so. No need to be happy like that!\n");
     } else if (playerScore > 200 && playerScore <= 400) {
-      System.out.println("Pretty DECENT. Not bad I guess");
+      System.out.println("\n\t\tPretty DECENT. Not bad I guess\n");
     } else {
-      System.out.println("YO! You are trully a LEGEND!!!!.");
+      System.out.println("\n\t\tYO! You are trully a LEGEND!!!!.\n");
     }
   }
 
@@ -139,21 +123,17 @@ public class PlayFrogJump {
     player = new player(name);
 
     System.out.println(
-      "\n\t\t\t+-----------------------------------------------------------------+"
-    );
+        "\n\t\t\t+-----------------------------------------------------------------+");
     System.out.println(
-      "\t\t\t\tHave fun there " +
-      player.getName() +
-      ", May the force be with you!"
-    );
+        "\t\t\t\tHave fun there " +
+            player.getName() +
+            ", May the force be with you!");
     System.out.println(
-      "\t\t\t+-----------------------------------------------------------------+\n"
-    );
+        "\t\t\t+-----------------------------------------------------------------+\n");
     while (true) {
       System.out.print("\t\t\t\tPlease select the difficulty level!");
       System.out.print(
-        "\n\t\t\t\t1. Easy\n\t\t\t\t2. Normal\n\t\t\t\t3. Hard\n\t\t\t\t4. Insane\n"
-      );
+          "\n\t\t\t\t1. Easy\n\t\t\t\t2. Normal\n\t\t\t\t3. Hard\n\t\t\t\t4. Insane\n");
       System.out.print("\n\t\tYour Choice : ");
       level = in.nextInt();
       System.out.print("\n");
@@ -161,14 +141,11 @@ public class PlayFrogJump {
         break;
       } else {
         System.out.print(
-          "\n\t\t\t+================================================+"
-        );
+            "\n\t\t\t+================================================+");
         System.out.print(
-          "\n\t\t\t     The Difficulity You Choose Is Invalid!\n\t\t\tPlease Choose According To The Available Options"
-        );
+            "\n\t\t\t     The Difficulity You Choose Is Invalid!\n\t\t\tPlease Choose According To The Available Options");
         System.out.print(
-          "\n\t\t\t+================================================+\n"
-        );
+            "\n\t\t\t+================================================+\n");
       }
     }
 
@@ -201,8 +178,7 @@ public class PlayFrogJump {
 
     System.out.println("\n\t\tYour starting point Is: " + frog.getPoint());
     System.out.println(
-      "\t\tNow your frog is in the " + frog.getPosition() + " box position"
-    );
+        "\t\tNow your frog is in the " + frog.getPosition() + " box position");
     while (frog.getPosition() < 299 && frog.getPoint() > 0) {
       if (frog.getPosition() == 298) {
         System.out.print("\n\t\tHey! Its ur last jump!!");
@@ -212,8 +188,7 @@ public class PlayFrogJump {
       Movement();
       choice = in.nextInt();
       System.out.println(
-        "\t\t-----------------------------------------------------------------\n"
-      );
+          "\t\t-----------------------------------------------------------------\n");
 
       if (choice == 1) {
         frog.jump1fwd();
@@ -237,8 +212,7 @@ public class PlayFrogJump {
         }
       } else {
         System.out.println(
-          "\t\tThe Option You Choose is Invalid\n\t\t\tPlease Try Again: "
-        );
+            "\t\tThe Option You Choose is Invalid\n\t\t\tPlease Try Again: ");
         continue;
       }
 
@@ -252,320 +226,230 @@ public class PlayFrogJump {
           frog.setPoint(frog.getPoint() + easyGame.contain(frog.getPosition()));
           if (easyGame.contain(frog.getPosition()) == 50) {
             System.out.print(
-              "\n\t\t\t\t\t=========================================="
-            );
+                "\n\t\t\t\t\t==========================================");
             System.out.print(
-              "\n\t\t\t\t\t||        EXTRAORDINARYYYYY!!           ||"
-            );
+                "\n\t\t\t\t\t||        EXTRAORDINARYYYYY!!           ||");
             System.out.print(
-              "\n\t\t\t\t\t||      YOU FOUND A DIAMOND COINN!!!    ||"
-            );
+                "\n\t\t\t\t\t||      YOU FOUND A DIAMOND COINN!!!    ||");
             System.out.print(
-              "\n\t\t\t\t\t||    IT GIVES YOU 50 EXTRA POINTS!!!   ||"
-            );
+                "\n\t\t\t\t\t||    IT GIVES YOU 50 EXTRA POINTS!!!   ||");
             System.out.print(
-              "\n\t\t\t\t\t==========================================\n"
-            );
+                "\n\t\t\t\t\t==========================================\n");
             System.out.println(
-              "\n\t\tYour Point Right Now Is: " + frog.getPoint()
-            );
+                "\n\t\tYour Point Right Now Is: " + frog.getPoint());
             System.out.println(
-              "\t\tNow your frog is in the " +
-              frog.getPosition() +
-              " box position"
-            );
+                "\t\tNow your frog is in the " +
+                    frog.getPosition() +
+                    " box position");
           } else if (easyGame.contain(frog.getPosition()) == -5) {
             System.out.print(
-              "\n\t\t\t\t\t==========================================================="
-            );
+                "\n\t\t\t\t\t===========================================================");
             System.out.print(
-              "\n\t\t\t\t\t||                         Mehhhhh                       ||"
-            );
+                "\n\t\t\t\t\t||                         Mehhhhh                       ||");
             System.out.print(
-              "\n\t\t\t\t\t||       Your againts squirtle, it's not very scary!     ||"
-            );
+                "\n\t\t\t\t\t||       Your againts squirtle, it's not very scary!     ||");
             System.out.print(
-              "\n\t\t\t\t\t||   it just ask you for a candy, so u have to buy it    ||"
-            );
+                "\n\t\t\t\t\t||   it just ask you for a candy, so u have to buy it    ||");
             System.out.print(
-              "\n\t\t\t\t\t||          and that candy cost you 5 points :)          ||"
-            );
+                "\n\t\t\t\t\t||          and that candy cost you 5 points :)          ||");
             System.out.print(
-              "\n\t\t\t\t\t===========================================================\n"
-            );
+                "\n\t\t\t\t\t===========================================================\n");
             System.out.println(
-              "\n\t\tYour Point Right Now Is: " + frog.getPoint()
-            );
+                "\n\t\tYour Point Right Now Is: " + frog.getPoint());
             System.out.println(
-              "\t\tNow your frog is in the " +
-              frog.getPosition() +
-              " box position"
-            );
+                "\t\tNow your frog is in the " +
+                    frog.getPosition() +
+                    " box position");
           } else {
             System.out.print(
-              "\n\t\t\t\t\t=========================================="
-            );
+                "\n\t\t\t\t\t==========================================");
             System.out.print(
-              "\n\t\t\t\t\t||              HAHAHAHA                ||"
-            );
+                "\n\t\t\t\t\t||              HAHAHAHA                ||");
             System.out.print(
-              "\n\t\t\t\t\t||              HAHAHAHA                ||"
-            );
+                "\n\t\t\t\t\t||              HAHAHAHA                ||");
             System.out.print(
-              "\n\t\t\t\t\t||     You Did Not Find ANYTHING!!      ||"
-            );
+                "\n\t\t\t\t\t||     You Did Not Find ANYTHING!!      ||");
             System.out.print(
-              "\n\t\t\t\t\t==========================================\n"
-            );
+                "\n\t\t\t\t\t==========================================\n");
             System.out.println(
-              "\n\t\tour Point Right Now Is: " + frog.getPoint()
-            );
+                "\n\t\tour Point Right Now Is: " + frog.getPoint());
             System.out.println(
-              "\t\tNow your frog is in the " +
-              frog.getPosition() +
-              " box position"
-            );
+                "\t\tNow your frog is in the " +
+                    frog.getPosition() +
+                    " box position");
           }
           break;
         case 2:
           frog.setPoint(
-            frog.getPoint() + normalGame.contain(frog.getPosition())
-          );
+              frog.getPoint() + normalGame.contain(frog.getPosition()));
           if (normalGame.contain(frog.getPosition()) == 30) {
             System.out.print(
-              "\n\t\t\t\t\t=========================================="
-            );
+                "\n\t\t\t\t\t==========================================");
             System.out.print(
-              "\n\t\t\t\t\t||            UNBELIEVABLE!             ||"
-            );
+                "\n\t\t\t\t\t||            UNBELIEVABLE!             ||");
             System.out.print(
-              "\n\t\t\t\t\t||      You found a GOLD coin!!!        ||"
-            );
+                "\n\t\t\t\t\t||      You found a GOLD coin!!!        ||");
             System.out.print(
-              "\n\t\t\t\t\t||    It gives you 30 extra points      ||"
-            );
+                "\n\t\t\t\t\t||    It gives you 30 extra points      ||");
             System.out.print(
-              "\n\t\t\t\t\t==========================================\n"
-            );
+                "\n\t\t\t\t\t==========================================\n");
             System.out.println(
-              "\n\t\tYour Point Right Now Is: " + frog.getPoint()
-            );
+                "\n\t\tYour Point Right Now Is: " + frog.getPoint());
             System.out.println(
-              "\t\tNow your frog is in the " +
-              frog.getPosition() +
-              " box position"
-            );
+                "\t\tNow your frog is in the " +
+                    frog.getPosition() +
+                    " box position");
           } else if (normalGame.contain(frog.getPosition()) == -18) {
             System.out.print(
-              "\n\t\t\t\t\t=========================================================="
-            );
+                "\n\t\t\t\t\t==========================================================");
             System.out.print(
-              "\n\t\t\t\t\t||                      Carefull!!                      ||"
-            );
+                "\n\t\t\t\t\t||                      Carefull!!                      ||");
             System.out.print(
-              "\n\t\t\t\t\t||     You're againts SNORLAX, it's kinda aggresive.    ||"
-            );
+                "\n\t\t\t\t\t||     You're againts SNORLAX, it's kinda aggresive.    ||");
             System.out.print(
-              "\n\t\t\t\t\t||           HE ATTACKS YOU WITH HIS HEAVY SLAM         ||"
-            );
+                "\n\t\t\t\t\t||           HE ATTACKS YOU WITH HIS HEAVY SLAM         ||");
             System.out.print(
-              "\n\t\t\t\t\t||             AND MAKES YOU LOSE 18 POINTS             ||"
-            );
+                "\n\t\t\t\t\t||             AND MAKES YOU LOSE 18 POINTS             ||");
             System.out.print(
-              "\n\t\t\t\t\t==========================================================\n"
-            );
+                "\n\t\t\t\t\t==========================================================\n");
             System.out.println(
-              "\n\t\tYour Point Right Now Is: " + frog.getPoint()
-            );
+                "\n\t\tYour Point Right Now Is: " + frog.getPoint());
             System.out.println(
-              "\t\tNow your frog is in the " +
-              frog.getPosition() +
-              " box position"
-            );
+                "\t\tNow your frog is in the " +
+                    frog.getPosition() +
+                    " box position");
           } else {
             System.out.print(
-              "\n\t\t\t\t\t=========================================="
-            );
+                "\n\t\t\t\t\t==========================================");
             System.out.print(
-              "\n\t\t\t\t\t||              HAHAHAHA                ||"
-            );
+                "\n\t\t\t\t\t||              HAHAHAHA                ||");
             System.out.print(
-              "\n\t\t\t\t\t||              HAHAHAHA                ||"
-            );
+                "\n\t\t\t\t\t||              HAHAHAHA                ||");
             System.out.print(
-              "\n\t\t\t\t\t||     You Did Not Find ANYTHING!!      ||"
-            );
+                "\n\t\t\t\t\t||     You Did Not Find ANYTHING!!      ||");
             System.out.print(
-              "\n\t\t\t\t\t==========================================\n"
-            );
+                "\n\t\t\t\t\t==========================================\n");
             System.out.println(
-              "\n\t\tYour Point Right Now Is: " + frog.getPoint()
-            );
+                "\n\t\tYour Point Right Now Is: " + frog.getPoint());
             System.out.println(
-              "\t\tNow your frog is in the " +
-              frog.getPosition() +
-              " box position"
-            );
+                "\t\tNow your frog is in the " +
+                    frog.getPosition() +
+                    " box position");
           }
           break;
         case 3:
           frog.setPoint(frog.getPoint() + hardGame.contain(frog.getPosition()));
           if (hardGame.contain(frog.getPosition()) == 10) {
             System.out.print(
-              "\n\t\t\t\t\t======================================="
-            );
+                "\n\t\t\t\t\t=======================================");
             System.out.print(
-              "\n\t\t\t\t\t||              Hey!                 ||"
-            );
+                "\n\t\t\t\t\t||              Hey!                 ||");
             System.out.print(
-              "\n\t\t\t\t\t||     You Found a SILVER Coin!!.    ||"
-            );
+                "\n\t\t\t\t\t||     You Found a SILVER Coin!!.    ||");
             System.out.print(
-              "\n\t\t\t\t\t||    It gives you 10 extra points   ||"
-            );
+                "\n\t\t\t\t\t||    It gives you 10 extra points   ||");
             System.out.print(
-              "\n\t\t\t\t\t=======================================\n"
-            );
+                "\n\t\t\t\t\t=======================================\n");
             System.out.println(
-              "\n\t\tYour Point Right Now Is: " + frog.getPoint()
-            );
+                "\n\t\tYour Point Right Now Is: " + frog.getPoint());
             System.out.println(
-              "\t\tNow your frog is in the " +
-              frog.getPosition() +
-              " box position"
-            );
+                "\t\tNow your frog is in the " +
+                    frog.getPosition() +
+                    " box position");
           } else if (hardGame.contain(frog.getPosition()) == -30) {
             System.out.print(
-              "\n\t\t\t\t\t==========================================================="
-            );
+                "\n\t\t\t\t\t===========================================================");
             System.out.print(
-              "\n\t\t\t\t\t||                        OH NOOO                        ||"
-            );
+                "\n\t\t\t\t\t||                        OH NOOO                        ||");
             System.out.print(
-              "\n\t\t\t\t\t||      YOU'RE AGAINTS GODZILLA, THE KING OF MONSTERR    ||"
-            );
+                "\n\t\t\t\t\t||      YOU'RE AGAINTS GODZILLA, THE KING OF MONSTERR    ||");
             System.out.print(
-              "\n\t\t\t\t\t||           HE ATTACKS YOU WITH HIS FIRE BREATH         ||"
-            );
+                "\n\t\t\t\t\t||           HE ATTACKS YOU WITH HIS FIRE BREATH         ||");
             System.out.print(
-              "\n\t\t\t\t\t||             AND MAKES YOU LOSE 30 POINTS              ||"
-            );
+                "\n\t\t\t\t\t||             AND MAKES YOU LOSE 30 POINTS              ||");
             System.out.print(
-              "\n\t\t\t\t\t===========================================================\n"
-            );
+                "\n\t\t\t\t\t===========================================================\n");
             System.out.println(
-              "\n\t\tYour Point Right Now Is: " + frog.getPoint()
-            );
+                "\n\t\tYour Point Right Now Is: " + frog.getPoint());
             System.out.println(
-              "\t\tNow your frog is in the " +
-              frog.getPosition() +
-              " box position"
-            );
+                "\t\tNow your frog is in the " +
+                    frog.getPosition() +
+                    " box position");
           } else {
             System.out.print(
-              "\n\t\t\t\t\t=========================================="
-            );
+                "\n\t\t\t\t\t==========================================");
             System.out.print(
-              "\n\t\t\t\t\t||              HAHAHAHA                ||"
-            );
+                "\n\t\t\t\t\t||              HAHAHAHA                ||");
             System.out.print(
-              "\n\t\t\t\t\t||              HAHAHAHA                ||"
-            );
+                "\n\t\t\t\t\t||              HAHAHAHA                ||");
             System.out.print(
-              "\n\t\t\t\t\t||     You Did Not Find ANYTHING!!      ||"
-            );
+                "\n\t\t\t\t\t||     You Did Not Find ANYTHING!!      ||");
             System.out.print(
-              "\n\t\t\t\t\t==========================================\n"
-            );
+                "\n\t\t\t\t\t==========================================\n");
             System.out.println(
-              "\n\t\tYour Point Right Now Is: " + frog.getPoint()
-            );
+                "\n\t\tYour Point Right Now Is: " + frog.getPoint());
             System.out.println(
-              "\t\tNow your frog is in the " +
-              frog.getPosition() +
-              " box position"
-            );
+                "\t\tNow your frog is in the " +
+                    frog.getPosition() +
+                    " box position");
           }
           break;
         case 4:
           frog.setPoint(
-            frog.getPoint() + insaneGame.contain(frog.getPosition())
-          );
+              frog.getPoint() + insaneGame.contain(frog.getPosition()));
           if (insaneGame.contain(frog.getPosition()) == 5) {
             System.out.print(
-              "\n\t\t\t\t\t======================================"
-            );
+                "\n\t\t\t\t\t======================================");
             System.out.print(
-              "\n\t\t\t\t\t||            Oh Look!              ||"
-            );
+                "\n\t\t\t\t\t||            Oh Look!              ||");
             System.out.print(
-              "\n\t\t\t\t\t||     You found a BRONZE coin!.    ||"
-            );
+                "\n\t\t\t\t\t||     You found a BRONZE coin!.    ||");
             System.out.print(
-              "\n\t\t\t\t\t||    It gives you 5 extra points   ||"
-            );
+                "\n\t\t\t\t\t||    It gives you 5 extra points   ||");
             System.out.print(
-              "\n\t\t\t\t\t======================================\n"
-            );
+                "\n\t\t\t\t\t======================================\n");
             System.out.println(
-              "\n\t\tYour Point Right Now Is: " + frog.getPoint()
-            );
+                "\n\t\tYour Point Right Now Is: " + frog.getPoint());
             System.out.println(
-              "\t\tNow your frog is in the " +
-              frog.getPosition() +
-              " box position"
-            );
+                "\t\tNow your frog is in the " +
+                    frog.getPosition() +
+                    " box position");
           } else if (insaneGame.contain(frog.getPosition()) == -90) {
             System.out.print(
-              "\n\t\t\t\t\t==========================================================="
-            );
+                "\n\t\t\t\t\t===========================================================");
             System.out.print(
-              "\n\t\t\t\t\t||        DUN DUN DUN DUNNNN MAX VERTSAPENN!!            ||"
-            );
+                "\n\t\t\t\t\t||        DUN DUN DUN DUNNNN MAX VERTSAPENN!!            ||");
             System.out.print(
-              "\n\t\t\t\t\t||      YOU'RE AGAINTS MAX VERSTAPPEN, THE MAD MAX       ||"
-            );
+                "\n\t\t\t\t\t||      YOU'RE AGAINTS MAX VERSTAPPEN, THE MAD MAX       ||");
             System.out.print(
-              "\n\t\t\t\t\t||           HE ATTACKS YOU WITH HIS F1 CAR              ||"
-            );
+                "\n\t\t\t\t\t||           HE ATTACKS YOU WITH HIS F1 CAR              ||");
             System.out.print(
-              "\n\t\t\t\t\t||             AND MAKES YOU LOSE 90 POINTS              ||"
-            );
+                "\n\t\t\t\t\t||             AND MAKES YOU LOSE 90 POINTS              ||");
             System.out.print(
-              "\n\t\t\t\t\t===========================================================\n"
-            );
+                "\n\t\t\t\t\t===========================================================\n");
             System.out.println(
-              "\n\t\tYour Point Right Now Is: " + frog.getPoint()
-            );
+                "\n\t\tYour Point Right Now Is: " + frog.getPoint());
             System.out.println(
-              "\t\tNow your frog is in the " +
-              frog.getPosition() +
-              " box position"
-            );
+                "\t\tNow your frog is in the " +
+                    frog.getPosition() +
+                    " box position");
           } else {
             System.out.print(
-              "\n\t\t\t\t\t=========================================="
-            );
+                "\n\t\t\t\t\t==========================================");
             System.out.print(
-              "\n\t\t\t\t\t||              HAHAHAHA                ||"
-            );
+                "\n\t\t\t\t\t||              HAHAHAHA                ||");
             System.out.print(
-              "\n\t\t\t\t\t||              HAHAHAHA                ||"
-            );
+                "\n\t\t\t\t\t||              HAHAHAHA                ||");
             System.out.print(
-              "\n\t\t\t\t\t||     You Did Not Find ANYTHING!!      ||"
-            );
+                "\n\t\t\t\t\t||     You Did Not Find ANYTHING!!      ||");
             System.out.print(
-              "\n\t\t\t\t\t==========================================\n"
-            );
+                "\n\t\t\t\t\t==========================================\n");
             System.out.println(
-              "\n\t\tYour Point Right Now Is: " + frog.getPoint()
-            );
+                "\n\t\tYour Point Right Now Is: " + frog.getPoint());
             System.out.println(
-              "\t\tNow your frog is in the " +
-              frog.getPosition() +
-              " box position"
-            );
+                "\t\tNow your frog is in the " +
+                    frog.getPosition() +
+                    " box position");
           }
           break;
       }
@@ -573,20 +457,15 @@ public class PlayFrogJump {
 
     if (frog.getPoint() <= 0) {
       System.out.println(
-        "\t\t-----------------------------------------------------------------\n"
-      );
+          "\t\t-----------------------------------------------------------------\n");
       System.out.print(
-        "\n\t\t\t\t\t=========================================="
-      );
+          "\n\t\t\t\t\t==========================================");
       System.out.print(
-        "\n\t\t\t\t\t||              GAME OVER!              ||"
-      );
+          "\n\t\t\t\t\t||              GAME OVER!              ||");
       System.out.print(
-        "\n\t\t\t\t\t||         BRO, YOUR FROG DIED!         ||"
-      );
+          "\n\t\t\t\t\t||         BRO, YOUR FROG DIED!         ||");
       System.out.print(
-        "\n\t\t\t\t\t=========================================="
-      );
+          "\n\t\t\t\t\t==========================================");
     }
     System.out.print("\n\t\tThe Game is Finished!");
     player.setValue(frog.getPoint());
@@ -596,53 +475,14 @@ public class PlayFrogJump {
   }
 
   /**
-   * Metode statis replay yang
-   * memungkinkan pengguna untuk memutuskan apakah ingin bermain lagi atau tidak.
-   * @param play Boolean yang menentukan apakah permainan akan diulang.
-   * @return true jika pemain ingin bermain lagi, false jika tidak.
-   */
-
-  public static boolean replay(boolean play) {
-    Scanner ip = new Scanner(System.in);
-
-    System.out.println("\n");
-    System.out.println("\t\t\t+----------------------------+");
-    System.out.println("\t\t\t| Do You Want to Play Again ?|");
-    System.out.println("\t\t\t|           Yes(Y)           |");
-    System.out.println("\t\t\t|            No(N)           |");
-    System.out.println("\t\t\t|+---------------------------+");
-    System.out.print("\n\t\tYour Choice : ");
-
-    String replay;
-    do {
-      replay = ip.next();
-
-      if ("N".equalsIgnoreCase(replay)) {
-        play = false;
-        break;
-      }
-      if ("Y".equalsIgnoreCase(replay)) {
-        play = true;
-        break;
-      } else {
-        System.out.println("\nInvalid Input !!");
-        System.err.print("Please Try Again (y/n) : ");
-        continue;
-      }
-    } while (true);
-
-    return play;
-  }
-
-  /**
    * Metode utama main yang memulai eksekusi program dan
    * memberikan menu kepada pengguna untuk
    * memilih opsi permainan, menampilkan aturan permainan
    * , atau keluar dari program.
    */
   public static void main(String[] args) {
-    boolean letsPlay = true;
     int choice;
+    boolean playAgain;
 
     Scanner ip = new Scanner(System.in);
     Scanner ent = new Scanner(System.in);
@@ -650,20 +490,15 @@ public class PlayFrogJump {
     do {
       System.out.println("\n");
       System.out.println(
-        "\t\t==============================================================================="
-      );
+          "\t\t===============================================================================");
       System.out.println(
-        "\t\t<===================---<     WELCOME TRAVELERS      >---======================>"
-      );
+          "\t\t<===================---<     WELCOME TRAVELERS      >---======================>");
       System.out.println(
-        "\t\t<===================---<            TO              >---======================>"
-      );
+          "\t\t<===================---<            TO              >---======================>");
       System.out.println(
-        "\t\t<===================---<   THE ULTIMATE FROG JUMP   >---======================>"
-      );
+          "\t\t<===================---<   THE ULTIMATE FROG JUMP   >---======================>");
       System.out.println(
-        "\t\t==============================================================================="
-      );
+          "\t\t===============================================================================");
       System.out.println("\n");
       System.out.println("\t\t\t\t\t+-----------------------+ ");
       System.out.println("\t\t\t\t\t|         Menu          |");
@@ -677,16 +512,20 @@ public class PlayFrogJump {
       choice = ip.nextInt();
 
       if (choice == 1) {
-        boolean play = true;
         do {
           PlayFrogJump playing = new PlayFrogJump();
-        } while (play);
-
-        ip.nextLine();
-        System.out.println(
-          "\t\t<===================---<< THANKS FOR PLAYING >>---===================>"
-        );
-        break;
+          System.out.print("\n\t\tDo you want to play again? (1 for Yes / 0 for No): ");
+          int playChoice = ip.nextInt();
+          playAgain = false;
+          if (playChoice == 1) {
+            playAgain = true;
+          } else if (playChoice == 0) {
+            playAgain = false;
+          } else {
+            System.out.println("\n\t\tINVALID INPUT");
+            System.out.println("\t\tPlease enter 1 for Yes or 0 for No");
+          }
+        } while (playAgain);
       } else if (choice == 2) {
         printGameRules();
         System.out.println("\t\tPress enter to return to menu!");
@@ -704,5 +543,7 @@ public class PlayFrogJump {
     } while (true);
 
     ip.close();
+
+    ent.close();
   }
 }
