@@ -11,6 +11,7 @@
  * penggunaan kelas Scanner untuk
  * interaksi dengan input pengguna.
  */
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /*
@@ -37,9 +38,11 @@ public class PlayFrogJump {
         gbHard hardGame;
         gbInsane insaneGame;
 
-        /*
-         * Metode statis
-         * printGameRules yang mencetak aturan permainan
+        /**
+         * Menampilkan aturan permainan "The Ultimate Frog Jump" kepada pengguna.
+         * Aturan ini memberikan gambaran singkat tentang bagaimana permainan
+         * berlangsung.
+         * Selamat bermain!
          */
         public static void printGameRules() {
                 System.out.println("\n");
@@ -81,18 +84,29 @@ public class PlayFrogJump {
         }
 
         /**
-         * Retrieves a valid integer input from the user.
+         * Sebuah metode utilitas untuk mendapatkan input bilangan bulat yang valid dari
+         * pengguna menggunakan Scanner yang diberikan.
+         * Menampilkan pesan prompt dan terus meminta input hingga sebuah bilangan bulat
+         * yang valid dimasukkan.
          *
-         * @param scanner the scanner for user input
-         * @param prompt  the prompt message to display
-         * @return the valid integer input
+         * @param scanner Objek Scanner untuk membaca input pengguna.
+         * @param prompt  Pesan prompt yang meminta pengguna untuk memasukkan sebuah
+         *                bilangan.
+         * @return Bilangan bulat yang valid yang dimasukkan oleh pengguna.
+         * @throws NoSuchElementException   Jika input sudah habis.
+         * @throws IllegalStateException    Jika scanner sudah ditutup.
+         * @throws IllegalArgumentException Jika input yang dimasukkan tidak merupakan
+         *                                  bilangan bulat yang valid.
          */
         private static int getValidNumberInput(Scanner scanner, String prompt) {
                 while (true) {
                         try {
                                 System.out.print(prompt);
                                 return Integer.parseInt(scanner.nextLine());
-                        } catch (NumberFormatException e) {
+                        }
+                        // Menangani kasus ketika input yang dimasukkan bukan merupakan bilangan bulat
+                        // yang valid.
+                        catch (NumberFormatException e) {
                                 System.out.println("\n\n\t\t\t      =================================================");
                                 System.out.println("\t\t\t      |                                               |");
                                 System.out.println("\t\t\t      |  Invalid input. Please enter a valid number.  |");
@@ -103,11 +117,17 @@ public class PlayFrogJump {
         }
 
         /**
-         * Retrieves a valid non-empty string input from the user.
+         * Sebuah metode utilitas untuk mendapatkan input string yang valid dari
+         * pengguna menggunakan Scanner yang diberikan.
+         * Menampilkan prompt dan terus meminta input hingga sebuah string non-kosong
+         * dimasukkan.
          *
-         * @param scanner the scanner for user input
-         * @param prompt  the prompt message to display
-         * @return the valid non-empty string input
+         * @param scanner Objek Scanner untuk membaca input pengguna.
+         * @param prompt  Pesan prompt yang meminta pengguna untuk memasukkan sebuah
+         *                string.
+         * @return String non-kosong yang dimasukkan oleh pengguna.
+         * @throws NoSuchElementException Jika input sudah habis.
+         * @throws IllegalStateException  Jika scanner sudah ditutup.
          */
         private static String getValidStringInput(Scanner scanner, String prompt) {
                 while (true) {
@@ -116,7 +136,9 @@ public class PlayFrogJump {
 
                         if (!input.isBlank()) {
                                 return input;
-                        } else {
+                        }
+                        // Menangani kasus ketika input yang dimasukkan adalah string kosong.
+                        else {
                                 System.out.println("\n\n\t\t\t      =================================================");
                                 System.out.println("\t\t\t      |                                               |");
                                 System.out.println("\t\t\t      |Invalid input. Please enter a non-empty string.|");
@@ -127,8 +149,10 @@ public class PlayFrogJump {
         }
 
         /**
-         * Metode pribadi Movement yang menampilkan pilihan
-         * pergerakan yang dapat dipilih oleh pemain.
+         * Menampilkan pilihan gerakan kepada pengguna dalam permainan "The Ultimate
+         * Frog Jump".
+         * Pengguna dapat memilih untuk melompat maju atau mundur dengan pilihan 1
+         * hingga 4.
          */
         private static void Movement() {
                 System.out.print("\n\t\tChoose your next move!");
@@ -136,33 +160,47 @@ public class PlayFrogJump {
                                 "\n\t\t1. Jump 1 box forward\n\t\t2. Jump 2 boxes forward\n\t\t3. Jump backward 1 box\n\t\t4. Jump backward 2 boxes\n");
         }
 
-        /*
-         * Metode pribadi Congrats
-         * yang memberikan ucapan selamat berdasarkan skor pemain.
+        /**
+         * Menampilkan ucapan selamat berdasarkan skor pemain dalam permainan "The
+         * Ultimate Frog Jump".
+         * Ucapan akan bervariasi tergantung pada kategori skor pemain.
+         *
+         * @param playerScore Skor pemain yang akan dinilai.
          */
         private static void Congrats(int playerScore) {
                 if (playerScore <= 0) {
+                        // Menampilkan pesan untuk skor negatif atau nol.
                         System.out.println("\n\t\tBro, reallY? I cant even say anything -_-.\n");
                 } else if (playerScore > 0 && playerScore <= 100) {
+                        // Menampilkan pesan untuk skor dalam kategori "TERRIBLE".
                         System.out.println("\n\t\tYou are TERRIBLE my guy!\n");
                 } else if (playerScore > 100 && playerScore <= 200) {
-                        System.out.println("\n\t\tIts just so so. No need to be happy like that!\n");
+                        // Menampilkan pesan untuk skor dalam kategori "So-so".
+                        System.out.println(
+                                        "\n\t\tIts just so so. No need to be happy like that!\n");
                 } else if (playerScore > 200 && playerScore <= 400) {
+                        // Menampilkan pesan untuk skor dalam kategori "DECENT".
                         System.out.println("\n\t\tPretty DECENT. Not bad I guess\n");
                 } else {
+                        // Menampilkan pesan untuk skor dalam kategori "LEGEND".
                         System.out.println("\n\t\tYO! You are trully a LEGEND!!!!.\n");
                 }
         }
 
-        /*
-         * Konstruktor kelas PlayFrogJump yang memulai
-         * permainan dan mengatur tingkat kesulitan berdasarkan pilihan pengguna.
+        /**
+         * Memulai permainan "The Ultimate Frog Jump". Menginisialisasi pemain, nama,
+         * dan tingkat kesulitan.
+         * Permainan berlanjut hingga mencapai akhir jalur atau pemain kehilangan semua
+         * poin.
+         * Setelah permainan selesai, menampilkan pesan akhir dan klasifikasi pemain
+         * berdasarkan skor.
          */
         public PlayFrogJump() {
                 frog frog = new frog();
                 player player;
                 int choice;
 
+                // Meminta nama pemain
                 name = getValidStringInput(in, "\n\t\tPlease input your name\t : ");
                 player = new player(name);
 
@@ -174,12 +212,16 @@ public class PlayFrogJump {
                                                 ", May the force be with you!");
                 System.out.println(
                                 "\t\t\t+-----------------------------------------------------------------+\n");
+
+                // Memilih tingkat kesulitan
                 while (true) {
                         System.out.print("\t\t\t\tPlease select the difficulty level!");
                         System.out.print(
                                         "\n\t\t\t\t1. Easy\n\t\t\t\t2. Normal\n\t\t\t\t3. Hard\n\t\t\t\t4. Insane\n");
                         level = getValidNumberInput(in, "\n\t\tYour Choice : ");
                         System.out.print("\n");
+
+                        // Memvalidasi tingkat kesulitan yang dipilih
                         if (level >= 1 && level <= 4) {
                                 break;
                         } else {
@@ -187,12 +229,14 @@ public class PlayFrogJump {
                                                 "\n\t\t\t\t==================================================");
                                 System.out.print(
                                                 "\n\t\t\t\t|     The Difficulity You Choose Is Invalid!     |");
-                                System.out.print("\n\t\t\t\t|Please Choose According To The Available Options|");
+                                System.out.print(
+                                                "\n\t\t\t\t|Please Choose According To The Available Options|");
                                 System.out.print(
                                                 "\n\t\t\t\t==================================================\n\n");
                         }
                 }
 
+                // Menginisialisasi permainan berdasarkan tingkat kesulitan yang dipilih
                 switch (level) {
                         case 1:
                                 System.out.print("\t\t\t\t\t============================\n");
@@ -220,22 +264,31 @@ public class PlayFrogJump {
                                 break;
                 }
 
+                // Menampilkan posisi awal kodok
                 System.out.println("\n\t\tYour starting point Is: " + frog.getPoint());
                 System.out.println(
                                 "\t\tNow your frog is in the " + frog.getPosition() + " box position");
+
+                // Iterasi permainan hingga mencapai akhir jalur atau pemain kehilangan semua
+                // poin
                 while (frog.getPosition() < 299 && frog.getPoint() > 0) {
+                        // Menampilkan pesan khusus jika tinggal satu lompatan lagi menuju akhir jalur
                         if (frog.getPosition() == 298) {
                                 System.out.print("\n\t\tHey! Its ur last jump!!");
                         }
 
+                        // Mendapatkan pilihan gerakan dari pemain
                         int newPosition = frog.getPosition();
                         Movement();
                         choice = getValidNumberInput(in, "\n\t\tYour Choice : ");
                         System.out.println(
                                         "\t\t-----------------------------------------------------------------\n");
 
+                        // Menangani kasus khusus ketika kodok berada di kotak pertama dan pemain
+                        // memilih mundur
                         if (frog.getPosition() == 0 && (choice == 3 || choice == 4)) {
-                                System.out.print("\t\t\t\t==========================================================");
+                                System.out.print(
+                                                "\t\t\t\t==========================================================");
                                 System.out.print(
                                                 "\n\t\t\t\t|   You cannot jump back if you are on the 0th square    |");
                                 System.out.print(
@@ -243,6 +296,7 @@ public class PlayFrogJump {
                                 continue;
                         }
 
+                        // Menangani pemilihan gerakan dan memperbarui posisi kodok
                         if (choice == 1) {
                                 frog.jump1fwd();
                         } else if (choice == 2) {
@@ -268,12 +322,14 @@ public class PlayFrogJump {
                                                 "\n\t\t\t\t==================================================");
                                 System.out.print(
                                                 "\n\t\t\t\t|     The Option You Choose Is Invalid!          |");
-                                System.out.print("\n\t\t\t\t|Please Choose According To The Available Options|");
+                                System.out.print(
+                                                "\n\t\t\t\t|Please Choose According To The Available Options|");
                                 System.out.print(
                                                 "\n\t\t\t\t==================================================\n\n");
                                 continue;
                         }
 
+                        // Memperbarui kondisi permainan berdasarkan tingkat kesulitan yang dipilih
                         gbEasy easyGame = new gbEasy(300, 150, 120);
                         gbNormal normalGame = new gbNormal(300, 130, 150);
                         gbHard hardGame = new gbHard(300, 110, 170);
@@ -281,7 +337,9 @@ public class PlayFrogJump {
 
                         switch (level) {
                                 case 1:
+                                        // Memperbarui poin berdasarkan permainan mudah
                                         frog.setPoint(frog.getPoint() + easyGame.contain(frog.getPosition()));
+                                        // Menampilkan pesan khusus jika pemain menemukan koin berharga
                                         if (easyGame.contain(frog.getPosition()) == 50) {
                                                 System.out.print(
                                                                 "\n\t\t\t\t\t==========================================");
@@ -299,7 +357,9 @@ public class PlayFrogJump {
                                                                 "\t\tNow your frog is in the " +
                                                                                 frog.getPosition() +
                                                                                 " box position");
-                                        } else if (easyGame.contain(frog.getPosition()) == -5) {
+                                        }
+                                        // Menampilkan pesan khusus jika pemain bertemu dengan monster
+                                        else if (easyGame.contain(frog.getPosition()) == -5) {
                                                 System.out.print(
                                                                 "\n\t\t\t\t\t===========================================================");
                                                 System.out.print(
@@ -318,7 +378,9 @@ public class PlayFrogJump {
                                                                 "\t\tNow your frog is in the " +
                                                                                 frog.getPosition() +
                                                                                 " box position");
-                                        } else {
+                                        }
+                                        // Menampilkan pesan umum jika tidak ada yang ditemukan
+                                        else {
                                                 System.out.print(
                                                                 "\n\t\t\t\t\t==========================================");
                                                 System.out.print(
@@ -338,8 +400,10 @@ public class PlayFrogJump {
                                         }
                                         break;
                                 case 2:
+                                        // Memperbarui poin berdasarkan permainan normal
                                         frog.setPoint(
                                                         frog.getPoint() + normalGame.contain(frog.getPosition()));
+                                        // Menampilkan pesan khusus jika pemain menemukan koin emas
                                         if (normalGame.contain(frog.getPosition()) == 30) {
                                                 System.out.print(
                                                                 "\n\t\t\t\t\t==========================================");
@@ -357,7 +421,9 @@ public class PlayFrogJump {
                                                                 "\t\tNow your frog is in the " +
                                                                                 frog.getPosition() +
                                                                                 " box position");
-                                        } else if (normalGame.contain(frog.getPosition()) == -18) {
+                                        }
+                                        // Menampilkan pesan khusus jika pemain bertemu dengan monster
+                                        else if (normalGame.contain(frog.getPosition()) == -18) {
                                                 System.out.print(
                                                                 "\n\t\t\t\t\t==========================================================");
                                                 System.out.print(
@@ -376,7 +442,9 @@ public class PlayFrogJump {
                                                                 "\t\tNow your frog is in the " +
                                                                                 frog.getPosition() +
                                                                                 " box position");
-                                        } else {
+                                        }
+                                        // Menampilkan pesan umum jika tidak ada yang ditemukan
+                                        else {
                                                 System.out.print(
                                                                 "\n\t\t\t\t\t==========================================");
                                                 System.out.print(
@@ -396,7 +464,9 @@ public class PlayFrogJump {
                                         }
                                         break;
                                 case 3:
+                                        // Memperbarui poin berdasarkan permainan sulit
                                         frog.setPoint(frog.getPoint() + hardGame.contain(frog.getPosition()));
+                                        // Menampilkan pesan khusus jika pemain menemukan koin
                                         if (hardGame.contain(frog.getPosition()) == 10) {
                                                 System.out.print(
                                                                 "\n\t\t\t\t\t=======================================");
@@ -414,7 +484,9 @@ public class PlayFrogJump {
                                                                 "\t\tNow your frog is in the " +
                                                                                 frog.getPosition() +
                                                                                 " box position");
-                                        } else if (hardGame.contain(frog.getPosition()) == -30) {
+                                        }
+                                        // Menampilkan pesan khusus jika pemain bertemu dengan monster
+                                        else if (hardGame.contain(frog.getPosition()) == -30) {
                                                 System.out.print(
                                                                 "\n\t\t\t\t\t===========================================================");
                                                 System.out.print(
@@ -433,7 +505,9 @@ public class PlayFrogJump {
                                                                 "\t\tNow your frog is in the " +
                                                                                 frog.getPosition() +
                                                                                 " box position");
-                                        } else {
+                                        }
+                                        // Menampilkan pesan umum jika tidak ada yang ditemukan
+                                        else {
                                                 System.out.print(
                                                                 "\n\t\t\t\t\t==========================================");
                                                 System.out.print(
@@ -453,8 +527,10 @@ public class PlayFrogJump {
                                         }
                                         break;
                                 case 4:
+                                        // Memperbarui poin berdasarkan permainan insane
                                         frog.setPoint(
                                                         frog.getPoint() + insaneGame.contain(frog.getPosition()));
+                                        // Menampilkan pesan khusus jika pemain menemukan koin
                                         if (insaneGame.contain(frog.getPosition()) == 5) {
                                                 System.out.print(
                                                                 "\n\t\t\t\t\t======================================");
@@ -472,7 +548,9 @@ public class PlayFrogJump {
                                                                 "\t\tNow your frog is in the " +
                                                                                 frog.getPosition() +
                                                                                 " box position");
-                                        } else if (insaneGame.contain(frog.getPosition()) == -90) {
+                                        }
+                                        // Menampilkan pesan khusus jika pemain bertemu dengan monster
+                                        else if (insaneGame.contain(frog.getPosition()) == -90) {
                                                 System.out.print(
                                                                 "\n\t\t\t\t\t===========================================================");
                                                 System.out.print(
@@ -491,7 +569,9 @@ public class PlayFrogJump {
                                                                 "\t\tNow your frog is in the " +
                                                                                 frog.getPosition() +
                                                                                 " box position");
-                                        } else {
+                                        }
+                                        // Menampilkan pesan umum jika tidak ada yang ditemukan
+                                        else {
                                                 System.out.print(
                                                                 "\n\t\t\t\t\t==========================================");
                                                 System.out.print(
@@ -513,6 +593,7 @@ public class PlayFrogJump {
                         }
                 }
 
+                // Menampilkan pesan jika pemain kehilangan semua poin.
                 if (frog.getPoint() <= 0) {
                         System.out.println(
                                         "\t\t-----------------------------------------------------------------\n");
@@ -533,10 +614,15 @@ public class PlayFrogJump {
         }
 
         /**
-         * Metode utama main yang memulai eksekusi program dan
-         * memberikan menu kepada pengguna untuk
-         * memilih opsi permainan, menampilkan aturan permainan
-         * , atau keluar dari program.
+         * Metode utama untuk menjalankan permainan "The Ultimate Frog Jump".
+         * Menampilkan menu utama kepada pemain dan mengarahkan pemain ke pilihan yang
+         * sesuai.
+         * Pemain dapat memilih untuk bermain, melihat aturan permainan, atau keluar
+         * dari permainan.
+         * Jika pemain memilih untuk bermain, permainan akan dimulai dan pemain dapat
+         * memilih untuk bermain lagi.
+         * Jika pemain memilih untuk melihat aturan, aturan permainan akan ditampilkan.
+         * Jika pemain memilih untuk keluar, permainan akan berakhir.
          */
         public static void main(String[] args) {
                 int choice;
@@ -545,7 +631,9 @@ public class PlayFrogJump {
                 Scanner ip = new Scanner(System.in);
                 Scanner ent = new Scanner(System.in);
 
+                // Melakukan loop utama untuk menu.
                 do {
+                        // Menampilkan layar selamat datang dan menu utama.
                         System.out.println("\n");
                         System.out.println(
                                         "\t\t===============================================================================");
@@ -566,14 +654,18 @@ public class PlayFrogJump {
                         System.out.println("\t\t\t\t\t|       3. Exit         |");
                         System.out.println("\t\t\t\t\t+-----------------------+ ");
 
+                        // Meminta pemain untuk memasukkan pilihan.
                         choice = getValidNumberInput(ip, "\n\t\tPlease enter your choice : ");
 
+                        // Menangani pilihan pemain.
                         if (choice == 1) {
+                                // Jika pemain memilih untuk bermain, memulai permainan.
                                 do {
                                         PlayFrogJump playing = new PlayFrogJump();
-
+                                        // Menanyakan apakah pemain ingin bermain lagi.
                                         while (true) {
-                                                int playChoice = getValidNumberInput(ip,
+                                                int playChoice = getValidNumberInput(
+                                                                ip,
                                                                 "\n\t\tDo you want to play again? (1 for Yes / 0 for No): ");
                                                 playAgain = false;
                                                 if (playChoice == 1) {
@@ -604,24 +696,29 @@ public class PlayFrogJump {
                                         }
                                 } while (playAgain);
                         } else if (choice == 2) {
+                                // Jika pemain memilih untuk melihat aturan, tampilkan aturan.
                                 printGameRules();
                                 System.out.println("\t\tPress enter to return to menu!");
                                 ent.nextLine();
                                 continue;
                         } else if (choice == 3) {
+                                // Jika pemain memilih untuk keluar, keluar dari permainan.
                                 break;
                         } else {
+                                // Jika pemain memasukkan pilihan yang tidak valid, tampilkan pesan kesalahan.
                                 System.out.print(
                                                 "\n\n\t\t\t\t==================================================");
                                 System.out.print(
                                                 "\n\t\t\t\t|     The Option You Choose Is Invalid!          |");
-                                System.out.print("\n\t\t\t\t|Please Choose According To The Available Options|");
+                                System.out.print(
+                                                "\n\t\t\t\t|Please Choose According To The Available Options|");
                                 System.out.print(
                                                 "\n\t\t\t\t==================================================\n");
                                 continue;
                         }
                 } while (true);
 
+                // Menutup scanner.
                 ip.close();
 
                 ent.close();
