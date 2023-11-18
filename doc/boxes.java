@@ -15,7 +15,8 @@ public class boxes {
   /**
    * methode constructor tanpa parameter/first constructor
    */
-  public boxes() {}
+  public boxes() {
+  }
 
   /**
    * @param c
@@ -33,6 +34,7 @@ public class boxes {
 
   /**
    * methode acessor/getter
+   * 
    * @return coin
    */
   public coin getCoin() {
@@ -41,6 +43,7 @@ public class boxes {
 
   /**
    * methode acessor/getter
+   * 
    * @returnmonster
    */
   public monster getMonster() {
@@ -49,6 +52,7 @@ public class boxes {
 
   /**
    * Metode pengakses dengan nilai pengembalian boolean
+   * 
    * @return boolean
    */
   public boolean isThereCoin() {
@@ -57,6 +61,7 @@ public class boxes {
 
   /**
    * Metode pengakses dengan nilai pengembalian boolean
+   * 
    * @returnboolean
    */
   public boolean isThereMonster() {
